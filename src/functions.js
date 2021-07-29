@@ -1,4 +1,3 @@
-
 function keyboardDown(e) {
   //key pressed.
   switch (e.keyCode) {
@@ -61,7 +60,7 @@ function isColliding(a, b) {
   }
   return r;
 }
-let randomize = (min, max) =>  Math.trunc(Math.random() * (max + 1 - min) + min);
+let randomize = (min, max) => Math.trunc(Math.random() * (max + 1 - min) + min);
 
 function clearCanvas() {
   //cleaning the canvas

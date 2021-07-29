@@ -1,4 +1,3 @@
-
 function starsDisplay() {
   for (let i = 0; i < starDust.length; ++i) {
     starDust[i].draw();
@@ -135,8 +134,8 @@ function explosionShow(param) {
   for (let i = 0; i < explosion.length; ++i) {
     if (explosion[i].exist === false) {
       explosion[i].exist = true;
-      explosion[i].x = randomize(param.x, (param.x + param.xSize));
-      explosion[i].y = randomize(param.y, (param.y + param.ySize));
+      explosion[i].x = randomize(param.x, param.x + param.xSize);
+      explosion[i].y = randomize(param.y, param.y + param.ySize);
       explosion[i].snd.play();
       break;
     }
@@ -293,8 +292,9 @@ function bossDisplay() {
 function bossDie() {
   if (boss.alive === false) {
     win = true;
-    const hasExplosionRunning = explosion.filter(e => e.exist === true).length > 0;
-//    console.log(hasExplosionRunning);
+    const hasExplosionRunning =
+      explosion.filter((e) => e.exist === true).length > 0;
+    //    console.log(hasExplosionRunning);
     if (!hasExplosionRunning) {
       explosion = [];
       Array.from({ length: 3 }).forEach(() => {
